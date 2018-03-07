@@ -15,7 +15,6 @@ public class PDFUtil {
     public static void createDocument(String path, String input) {
         PDDocument doc = null;
         try {
-            System.out.println("path = " + path + ", input = " + input);
             doc = new PDDocument();
             PDFont font = PDType1Font.HELVETICA;
             PDPage page = new PDPage();

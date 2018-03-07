@@ -63,7 +63,7 @@ public class PDFServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String sessionId = session.getId();
             String text = request.getParameter("text");
-
+            System.out.println("text = " + text);
 
             String path = request.getServletContext().getRealPath("/result") + sessionId + ".pdf";
             if (dependencyInjector != null) {
