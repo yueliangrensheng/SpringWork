@@ -18,14 +18,22 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- Servlet -->
-    <!--<servlet>-->
-        <!--<servlet-name>ControllerServlet</servlet-name>-->
-        <!--<servlet-class>com.yazao.spring.servlet.ControllerServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>ControllerServlet</servlet-name>-->
-        <!--<url-pattern>/input-product</url-pattern>-->
-        <!--<url-pattern>/save-product</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <!-- Spring MVC 相关配置 -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!--配置spring MVC 配置文件的 路径  默认是在 WEB-INF 目录下; 这里将 配置文件 springmvc-config.xml文件放到 /WEB-INF/config 目录下 -->
+            <param-value>/WEB-INF/config/springmvc-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!--匹配所有的Servlet 到 springmvc -->
+        <!--<url-pattern>/</url-pattern>-->
+        <url-pattern>/ControllerServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

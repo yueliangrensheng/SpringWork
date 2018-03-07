@@ -2,6 +2,7 @@ package com.yazao.spring.servlet;
 
 import com.yazao.spring.action.PDFAction;
 import com.yazao.spring.utils.DependencyInjector;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -55,7 +56,7 @@ public class PDFServlet extends HttpServlet {
         String action = uri.substring(lastIndex + 1);
 
         if ("form".equals(action)) {
-            String dispatchUrl = "/product/Form.jsp";
+            String dispatchUrl = "/jsp/Form.jsp";
             RequestDispatcher dispatcher = request.getRequestDispatcher(dispatchUrl);
             dispatcher.forward(request, response);
             return;

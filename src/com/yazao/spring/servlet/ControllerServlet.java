@@ -19,8 +19,8 @@ import java.util.List;
 /**
  * Created by zhaishaoping on 03/03/2018.
  */
-@WebServlet(name = "ControllerServlet", urlPatterns = {
-        "/input-product", "/save-product"})
+//@WebServlet(name = "ControllerServlet", urlPatterns = {
+//        "/input-product", "/save-product"})
 public class ControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process(request, response);
@@ -44,7 +44,7 @@ public class ControllerServlet extends HttpServlet {
         String action = uri.substring(lastIndex + 1);
         String dispatchUrl = null;
         if ("input-product".equals(action)) {
-            dispatchUrl = "/product/ProductForm.jsp";
+            dispatchUrl = "/jsp/ProductForm.jsp";
         } else if ("save-product".equals(action)) {
             ProductForm productForm = new ProductForm();
             productForm.setName(request.getParameter("name"));
@@ -70,11 +70,11 @@ public class ControllerServlet extends HttpServlet {
                 saveProductAction.save(product);
                 //将 Product 对想保存到 request域中，为了 jsp页面可以访问该对象。
                 request.setAttribute("product", product);
-                dispatchUrl = "/product/ProductDetails.jsp";
+                dispatchUrl = "/jsp/ProductDetails.jsp";
             } else {
                 request.setAttribute("errors", errors);
                 request.setAttribute("form", productForm);
-                dispatchUrl = "/product/ProductForm.jsp";
+                dispatchUrl = "/jsp/ProductForm.jsp";
             }
 
 
