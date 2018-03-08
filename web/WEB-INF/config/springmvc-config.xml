@@ -18,13 +18,14 @@
 
     <!-- 视图解析器 相关配置 -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/jsp/"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
 
     <!-- 基于注解 Controller 的 控制器 相关配置。目的是 指示Spring MVC 扫描目标包中的类。 -->
     <context:component-scan base-package="com.yazao.spring.controller"/>
+    <context:component-scan base-package="com.yazao.spring.service"/>
 
     <!-- annotation-driver 和 resources ： 如果没有 annotation-driver，resources会阻止任意的控制器被调用；如果不需要使用 resources，则不需要 annotation-driver -->
     <!-- annotation-driven ： 做了很多事情，其中包括：注册用于控制器注解的bean对象。-->

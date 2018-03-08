@@ -1,8 +1,9 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Add Product Form</title>
-    <style type="text/css">@import url(../css/main.css);</style>
+    <style type="text/css">@import url("<c:url value="../css/main.css"/>");</style>
 </head>
 <body>
 <form method="post" action="pdf">

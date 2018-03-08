@@ -11,6 +11,7 @@ public class Product implements Serializable {
     private String name;
     private String description;
     private BigDecimal price;
+    private long id;
 
     public String getName() {
         return name;
@@ -34,5 +35,13 @@ public class Product implements Serializable {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

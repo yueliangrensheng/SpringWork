@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhaishaoping
@@ -9,7 +10,7 @@
 <html>
 <head>
     <title>Save Product</title>
-    <style type="text/css">@import url(../css/main.css);</style>
+    <style type="text/css">@import url("<c:url value="../css/main.css"/>");</style>
 </head>
 <body>
 <div id="global">

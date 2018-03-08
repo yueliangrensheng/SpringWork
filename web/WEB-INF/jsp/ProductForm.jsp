@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: zhaishaoping
@@ -9,6 +10,7 @@
 <html>
 <head>
     <title>Add Product Form</title>
+    <style type="text/css">@import url("<c:url value="../css/main.css"/>");</style>
 </head>
 <body>
 <form method="post" action="save-product">
