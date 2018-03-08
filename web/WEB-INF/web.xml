@@ -32,8 +32,9 @@
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <!--匹配所有的Servlet 到 springmvc -->
-        <!--<url-pattern>/</url-pattern>-->
-        <url-pattern>/ControllerServlet</url-pattern>
+        <url-pattern>/</url-pattern>
+        <!-- 仅处理 ControllerServlet -->
+        <!--<url-pattern>/ControllerServlet</url-pattern>-->
     </servlet-mapping>
 
 </web-app>
