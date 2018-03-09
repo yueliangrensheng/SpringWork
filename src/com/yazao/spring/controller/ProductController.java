@@ -44,12 +44,17 @@ public class ProductController {
 
         //add Product
         Product saveProduct = productService.add(product);
-
+        // Flash属性 ： 需要在Spring MVC配置文件中添加元素 <annotation-driven/>，还需要在 方法上添加一个参数：RedirectAttributes
         redirectAttributes.addFlashAttribute("message", "The Product was successfully added.");
+        // 重定向 ：这里使用重定向而不是转发来防止当用户重新加载页面时 saveProduct 被二次调用。
+        // 使用重定向不便的地方：无法轻松传值给目标页面。采用转发，则可以简单的将属性添加到Model，使得目标视图可以轻松访问。
+        //由于重定向经过客户端，所以Model中的一切都在重定向时丢失。
+        //好在，Spring 3.1以及之后版本，可以通过Flash属性提供重定向传值的方法。
         return "redirect:/view-product/" + saveProduct.getId();
     }
 
 
+    //请求参数 和 路径变量
     @RequestMapping(value = {"/view-product/{id}"})
     public String viewProduct(@PathVariable Long id, Model model) {
         Product product = productService.get(id);
